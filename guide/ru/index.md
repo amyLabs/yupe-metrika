@@ -1,11 +1,27 @@
 Модуль "Метрика"
 ===============
+Модуль метрика предназначен для подсчета количества просмотров страниц.
+
+
+Список реализованных виджетов в модуле:
+------
+* MetrikaWidget - базовый виджет, необходим для подсчета количества просмотров
+* ViewsWidget - виджет выводит количество просмотров страницы
+* YandexMetrika - виджет выводит код Yandex Metrika
+
+
+Как использовать MetrikaWidget:
+------
+Для того чтобы включить возможность подсчета необходимо разместить код вызова виджета
+<?php $this->widget('application.modules.metrika.widgets.MetrikaWidget'); ?> в файле шаблона.
 
 
 
+Как использовать ViewsWidget:
+------
+Реализовано два варианта вывода количества просмотров.
 
+1) <?php $this->widget('metrika.widgets.ViewsWidget'); ?>. Выводиться количество просмотров текущей страницы.
 
-Примеры вызова виджета ViewsWidget:
-1) <?php $this->widget('metrika.widgets.ViewsWidget'); ?>
-
-2) <?php $this->widget('metrika.widgets.ViewsWidget', ['url' => Yii::app()->createAbsoluteUrl('/blog/post/show/', ['slug' => $data->slug])]); ?>
+2) <?php $this->widget('metrika.widgets.ViewsWidget', ['url' => Yii::app()->createAbsoluteUrl('/blog/post/show/', ['slug' => $data->slug])]); ?>.
+Выводиться количество просмотров определенной страницы. В данном случае страницы блога.
