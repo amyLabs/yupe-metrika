@@ -19,9 +19,9 @@
 
 Как использовать ViewsWidget:
 ------
-Реализована два варианта вывода количества просмотров.
+Реализовано два варианта вывода количества просмотров.
 
-1 вариант - <?php $this->widget('metrika.widgets.ViewsWidget'); ?>. Выводиться количество просмотров текущей страницы.
+1) <?php $this->widget('metrika.widgets.ViewsWidget'); ?>. Выводиться количество просмотров текущей страницы.
 
-2 вариант - <?php $this->widget('metrika.widgets.ViewsWidget', ['url' => Yii::app()->createAbsoluteUrl('/blog/post/show/', ['slug' => $data->slug])]); ?>.
+2) <?php $this->widget('metrika.widgets.ViewsWidget', ['url' => Yii::app()->createAbsoluteUrl('/blog/post/show/', ['slug' => $data->slug])]); ?>.
 Выводиться количество просмотров определенной страницы. В данном случае страницы блога.
